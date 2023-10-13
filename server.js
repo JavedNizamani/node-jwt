@@ -4,6 +4,8 @@ dotenv.config();
 const port = process.env.PORT;
 const app = require('./middlewares/app');
 const server = http.createServer(app);
+require('./config/db.tables');
+
 server.listen(port,(err)=>{
     if(err){
         process.exit(1);
